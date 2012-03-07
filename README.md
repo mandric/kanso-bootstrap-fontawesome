@@ -72,7 +72,7 @@ them as css:
     "dependencies": {
         "attachments": null,
         "less-precompiler": null,
-        "bootstrap": null
+        "bootstrap-fontawesome": null
     }
 }
 ```
