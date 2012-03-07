@@ -1,7 +1,7 @@
-# Kanso Bootstrap
+# Kanso Bootstrap with Font Awesome
 
 This package allows you to quickly start using [Twitter
-Bootstrap](http://twitter.github.com/bootstrap/) and Less in your Kanso
+Bootstrap](http://twitter.github.com/bootstrap/) and Less in your Kanso 
 project. 
 
 ## Install
@@ -13,7 +13,7 @@ case:
 "dependencies": {
     "attachments": null,
     "less-precompiler": null,
-    "bootstrap": null
+    "bootstrap-fontawesome": null
 }
 ```
 
@@ -34,6 +34,7 @@ includes bootstrap:
 
 ```css
 @import "bootstrap/less/bootstrap.less";
+@baseFontPath: "../../bootstrap/font/";
 /* Now use bootstrap and less! */
 body { background-color: @pink; }
 ```
@@ -78,19 +79,17 @@ them as css:
 
 ### Icons
 
-Bootstrap 2.0 provides icons with the following html:
+In this package we updated Bootstrap to use the [Font
+Awesome](http://fortawesome.github.com/Font-Awesome/) icon set.  It's a little
+bleeding edge and is not merged with Bootstrap yet but provides you with
+several nice features.  
 
-```html
-<i class="icon-chevron-left"></i>
+The font files are include as attachments when you build your design
+doc, but the default path needs adjustment.  To reference your font files
+modify your less code:
+
 ```
-
-The images and js files are include as attachments when you build your design
-doc, but the default path needs adjustment.  To reference your sprite `png`
-files modify the less variables. e.g.
-
-```
-@iconSpritePath: "../../bootstrap/img/glyphicons-halflings.png";
-@iconWhiteSpritePath: "../../bootstrap/img/glyphicons-halflings-white.png";
+@baseFontPath: "../../bootstrap/font/";
 ```
 
 ## Deploy
@@ -104,18 +103,12 @@ kanso push example
 ## Docs
 
 You an browse the Bootstrap docs locally in the package directory under
-`bootstrap/docs/index.html` or check the website.
+`bootstrap/docs/index.html` or check the website.  Soon we will add the Font
+Awesome docs to also make them available locally, for now browse the website.
 
 ## Upgrading
 
-### 2.0.1-kanso.2
-
-Attaching images and js files by default now.  You may have to adjust your less
-code to your sprite path as shown in the Icons section.
-
 ### 2.0.1-kanso.1
 
-The directory structure changed so instead of including lib/bootstrap.less you
-include less/bootstrap.less. You also need to update the sprite image path, see
-the Icons section above.
+Added font-awesome, and turned on by default. 
 
